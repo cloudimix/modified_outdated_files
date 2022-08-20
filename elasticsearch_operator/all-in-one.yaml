@@ -98,8 +98,6 @@ spec:
     - agent
     singular: agent
   scope: Namespaced
-  subresources:
-    status: {}
   validation:
     openAPIV3Schema:
       description: Agent is the Schema for the Agents API.
