@@ -1,0 +1,18 @@
+apiVersion: elasticsearch.k8s.elastic.co/v1
+kind: Elasticsearch
+metadata:
+  name: esoperator
+spec:
+  version: 8.4.1
+  nodeSets:
+  - name: esdata
+    count: 1
+    config:
+      node.store.allow_mmap: false
+    podTemplate:
+      spec:
+        nodeSelector:
+          kubernetes.io/hostname: node-1
+        volumes:
+        - name: elasticsearch-data
+          emptyDir: {}  
