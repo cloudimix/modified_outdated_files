@@ -15,4 +15,15 @@ spec:
           kubernetes.io/hostname: node-1
         volumes:
         - name: elasticsearch-data
-          emptyDir: {}  
+          emptyDir: {}
+        containers:
+        - name: elasticsearch
+          resources:
+            requests:
+              memory: 3Gi
+              cpu: 2
+            limits:
+              memory: 3Gi
+        env:
+         - name: ES_JAVA_OPTS
+           value: -Xms2g -Xmx2g      
