@@ -3,7 +3,7 @@ kind: Elasticsearch
 metadata:
   name: esoperator
 spec:
-  version: 8.4.2
+  version: 8.4.1
   nodeSets:
   - name: esdata
     count: 1
